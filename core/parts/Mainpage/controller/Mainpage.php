@@ -17,4 +17,11 @@ class Mainpage extends Controller
         $this->view = new \view\Mainpage();
         $this->view->show();
     }
+
+    public function edit()
+    {
+        $this->view = new \view\Mainpage();
+        $edit = true;
+        $this->view->show($edit);
+    }
 }

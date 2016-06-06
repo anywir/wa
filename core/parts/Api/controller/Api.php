@@ -25,7 +25,6 @@ class Api
         //header('Content-type: application/json');
         echo $json;
 
-        // для кожного апі треба в моделі робити метод під апі, де парситься POST чи GET
    }
 
 }

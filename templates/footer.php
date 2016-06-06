@@ -17,5 +17,3 @@
         </script>
     </div>
 </footer>
-</body>
-</html>
