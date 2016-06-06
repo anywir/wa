@@ -1,11 +1,11 @@
 <?php
 
-define("DEVMODE", '0'); // 1 - на курсах 0- дома  CKeditor
+define("DEVMODE", '1'); // 1 - на курсах 0- дома  CKeditor
 define ("COUNTINPAGE", 4);//кількість новин на сторінку
 if (DEVMODE) {
-    define("SITE", "http://xxi-lnx/users/phpStart/wir/oop/oop_prj/");
-    define("P_METOD","7");
-    define("P_CLASS","6");
+    define("SITE", "http://localhost/wa/wacm/");
+    define("P_METOD","4");
+    define("P_CLASS","3");
 }
 else{
     define("SITE", "http://localhost/wa/wacm/");
@@ -31,6 +31,4 @@ function __autoload($className)
     {
         include_once("core/$namespace/$className.php");
     }
-
-
 }

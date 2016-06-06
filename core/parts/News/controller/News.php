@@ -6,7 +6,7 @@
  * Time: 15:27
  */
 
-namespace controller {
+namespace controller;
 
 
     class News
@@ -15,5 +15,9 @@ namespace controller {
         {
             echo "OK";
         }
+
+        public function apitest()
+        {
+            return "test API - OK";
+        }
     }
-}

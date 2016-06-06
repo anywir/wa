@@ -35,7 +35,7 @@ namespace systems
         {
             $arr = self::getPath();
 
-            $className = ucfirst($arr[0]?$arr[0]:"Main");
+            $className = ucfirst($arr[0]?$arr[0]:"Mainpage");
             $methodName = $arr[1]?$arr[1]:"index";
             $className = "\\controller\\".$className;
 
@@ -47,13 +47,11 @@ namespace systems
                     $obj->$methodName();
                 }
                 elseif ($className=='\\controller\\Api') $obj->$methodName($arr[2]);
-                else echo " page not found - 404";
+                else echo DEVMODE? "method - ".$methodName." not found":" page not found - 404";
             }
-            else echo " page not found + 404";
+            else echo DEVMODE? "Class -".$className." not found":" page not found - 404";
 
         }
     }
 
 }
-
-//__call(
