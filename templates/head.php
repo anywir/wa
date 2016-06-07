@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/wir.css">
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/adopt.css">
+    <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/modal.css">
 </head>
 
 <body>

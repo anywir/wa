@@ -27,8 +27,6 @@ namespace systems
             {
                 $resultArr[] = preg_replace("/\?.*/","",$pathArr[$n]);
             }
-
-
             return $resultArr;
         }
         public static function rout()

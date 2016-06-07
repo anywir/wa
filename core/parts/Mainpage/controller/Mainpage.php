@@ -15,13 +15,20 @@ class Mainpage extends Controller
     public function index()
     {
         $this->view = new \view\Mainpage();
-        $this->view->show();
+        $this->view->show($data,false,false);
     }
 
     public function edit()
     {
+        $edit = false;
+        $login = true;
         $this->view = new \view\Mainpage();
-        $edit = true;
-        $this->view->show($edit);
+        if(\model\User::IsTrueUser())
+        {
+            $edit = true;
+            $login = false;
+        }
+        $this->view->show($data,$edit,$login);
+
     }
 }
