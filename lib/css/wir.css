@@ -769,6 +769,7 @@
 
 
         /***ФОРМА***/
+            /*
         form{
             width:810px;
             height: 94px;
@@ -847,25 +848,28 @@
            margin-top: 6px;
            margin-left:  18px;           
         }
+        */
         /*===попьітка спрятать скроллбар ====*/
+        /*
+
         .hide_scroll{
             overflow: hidden;
             float: left;
         }          
-        .hide_scroll select{ /*вказуємо розмір елемента*/
+        .hide_scroll select{ /!*вказуємо розмір елемента*!/
             height: 82px;
             width: 120px;
         }
-        .devbox{  /*вказуємо розмір менший на ширину скроллбара*/
+        .devbox{  /!*вказуємо розмір менший на ширину скроллбара*!/
             width:103px;
             height: 84px;
         }         
-        .hide_scroll textarea{ /*вказуємо розмір елемента*/
+        .hide_scroll textarea{ /!*вказуємо розмір елемента*!/
             height: 82px;
             margin: 0px;
             width: 270px;
         }
-        .textbox{ /*вказуємо розмір менший на ширину скроллбара*/
+        .textbox{ /!*вказуємо розмір менший на ширину скроллбара*!/
             width: 253px;
             height:84px;
             margin-top: 5px;
@@ -887,6 +891,9 @@
             height: 81px;            
             box-shadow: inset 1px 1px 2px 0px black, inset -1px -1px 2px 0px black ;
         }
+
+        */
+
         #SkypeButton_Call_wired_phone{
             display: block;
             width: 80px;
@@ -916,6 +923,7 @@
             width: 80px;
         }
         footer input{
+            border: none;
             display: block;
             float:left;
             cursor: pointer;
