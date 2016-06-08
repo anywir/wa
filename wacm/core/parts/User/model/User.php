@@ -8,6 +8,7 @@
 
 namespace model;
 
+use systems\DB;
 
 class User
 {
@@ -32,7 +33,7 @@ class User
         {
 
             setcookie("auth",$res['login'],time()+60*60*24,"/");
-            setcookie("token",md5("supersecuritykey".$res['email'].$res['id']),time()+60*60*24,"/");
+            setcookie("token",md5("supersecuritykey".$res['login'].$res['id']),time()+60*60*24,"/");
             setcookie("id",$res['id'],time()+60*60*24,"/");
             return $res['id'];
         }

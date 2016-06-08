@@ -23,6 +23,7 @@ class Mainpage extends Controller
         $edit = false;
         $login = true;
         $this->view = new \view\Mainpage();
+        
         if(\model\User::IsTrueUser())
         {
             $edit = true;

@@ -15,11 +15,26 @@ function modlogin(id)
 $(document).ready(function() {
 
 
-    $(":submit").click("input",function()
+    $("#logform").submit(function(event)
     {
+        event.preventDefault();
         var passwd = $("#inputPasswd").val();
-        alert(passwd);
+        var login = $("#inputLogin").val();
+        var url = PATH+"api/user/login";
+        //alert(passwd+login);
+        /* отправляем данные методом POST */
+        
+        var posting = $.post( url, { login: login, passwd: passwd } );
 
+        /* результат */
+        posting.done(function( data ) {
+            var id = JSON.parse(data).id;
+            //alert("TYPE - "+id);
+            if (id>0)
+            {
+                location.reload(true) //якщо увійшли, заново завантажуємо сторінку
+            }  //інакще, нічого не відбувається
+        });
 
     });
     /* Закрытие модального окна, тут делаем то же самое но в обратном порядке */
@@ -35,3 +50,8 @@ $(document).ready(function() {
 });
 
 modlogin("#modlogin");
+
+
+
+
+
