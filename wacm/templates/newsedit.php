@@ -7,6 +7,7 @@ foreach ($data['news'] as $news)
         <time datetime="<?= $news['data'] ?>"><?= $news['data'] ?></time>
         <h3><?= $news['tema'] ?></h3>
         <p><?= $news['text'] ?></p>
+        <button id=<?= $news['id']?>>edit</button>
     </div>
     <?php
 }?>

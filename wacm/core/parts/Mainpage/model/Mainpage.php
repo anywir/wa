@@ -15,9 +15,7 @@ class Mainpage
 {
     public function getmain()
     {
-        $DBase = DB::getInstance();
-
-        $news = $DBase->select("news",null,null,"date",null,[0,5]);
+        $news = \model\News::get([0,5]);
         $data['news']=$news;
         return $data;
     }

@@ -8,8 +8,14 @@
 
 namespace model;
 
+use systems\DB;
 
 class News
 {
-
+    public static function get($limit)
+    {
+        $DBase = DB::getInstance();
+        $news = $DBase->select("news",null,null,"date",null,$limit);
+        return $news;
+    }
 }
