@@ -13,8 +13,9 @@ namespace systems {
     class DB
     {
         public $dBase;
+        protected static $instance;
 
-        public function __construct($setDb = null)
+        private function __construct($setDb = null)
         {
             if (!$setDb) $setDb = "mysql:host=localhost;dbname=wacms";
             try {
@@ -23,6 +24,11 @@ namespace systems {
             } catch (PDOException $e) {
                 die($e->getMessage());
             }
+        }
+
+        public static function getInstance(){
+            if (!self::$instance) self::$instance = new self();
+            return self::$instance;
         }
 
         function select($table, $what, $where = null, $orderColumn = null, $desc = null, $limit = null)

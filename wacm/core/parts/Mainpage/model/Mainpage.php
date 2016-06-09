@@ -9,11 +9,17 @@
 namespace model;
 
 
+use systems\DB;
+
 class Mainpage
 {
-    public function show()
+    public function getmain()
     {
-        return "main,show";
+        $DBase = DB::getInstance();
+
+        $news = $DBase->select("news",null,null,"date",null,[0,5]);
+        $data['news']=$news;
+        return $data;
     }
 
 

@@ -31,4 +31,10 @@ class User extends Controller
     {
         
     }
+
+    public function logout()
+    {
+        \model\User::logout();
+        header("Refresh:1;url=".SITE);
+    }
 }

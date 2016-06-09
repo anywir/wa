@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: parhomenkoav
- * Date: 07.06.2016
- * Time: 16:21
- */
+
 
 namespace model;
 
@@ -12,21 +7,10 @@ use systems\DB;
 
 class User
 {
-    /**
-     * метод має логінити юзера, створюючи два значення куккі
-     * auth - email user
-     * token - md5("security_key".email_user)
-     *
-     * @param string $email - емейл юзера
-     * @param string $pass - пароль юзера (не в md5)
-     * @return mixed - має повертати true якщо вдалось залогінитись
-     * та код помилки, якщо виникла помилка
-     * повертає ID користувача
-     */
 
     public function login($login = "",$pass = "")
     {
-        $DBase = new DB(null);
+        $DBase = DB::getInstance();
         $res =  $DBase->select("user_login",null,["login"=>$login,"password"=>hash("md5",$pass)],null,null,[0,1])[0];
         //print_r($res);
         if ($res)
@@ -43,6 +27,15 @@ class User
         }
 
     }
+
+    public static function logout()
+    {
+        setcookie("auth","",time()-600,"/");
+        setcookie("token","",time()-600,"/");
+        setcookie("id","",time()-600,"/");
+        return true;
+    }
+
     public static function IsTrueUser()
     {
         return (md5("supersecuritykey".$_COOKIE['auth'].$_COOKIE['id'])==$_COOKIE['token']);

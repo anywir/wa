@@ -17,7 +17,7 @@ class Mainpage
 
         if ($edit)
         {
-
+            include_once "templates/logout.php";
             include_once "templates/modnews.php";
             include_once "templates/newsedit.php";
             include_once "templates/artedit.php";
