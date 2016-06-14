@@ -19,6 +19,17 @@
     margin-top: -50px;
     margin-left: -150px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
 }
+
+.mod-news
+{
+    top: 25%; /* oтступaем сверху 25%, oстaльные 5% пoдвинет скрипт */
+    left: 50%; /* пoлoвинa экрaнa слевa */
+    width: 500px;
+    height: 235px; /* Рaзмеры дoлжны быть фиксирoвaны */
+    margin-top: -50px;
+    margin-left: -150px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+}
+
 /* Кнoпкa зaкрыть  */
 #modal_close {
     width: 14px;
@@ -71,11 +82,20 @@
 .form-group
 {
     display: block;
-    height: 35px;
-    /*background-color: #1b3b3b;*/
     margin: 2px;
     padding: 4px;
 }
+
+.form-group .text
+{
+    height: 35px;
+}
+
+.form-group .textarea
+{
+    height: 128px;
+}
+
 .form-group label
 {
     display: block;
@@ -90,8 +110,25 @@
 {
     display: block;
     text-align: left;
-    width: 200px;
     height: 27px;
+    border: none;
+    padding: 4px;
+}
+
+.mod-login input
+{
+    width: 202px;
+}
+.mod-news input
+{
+    width: 402px;
+}
+.mod-news .form-textarea
+{
+    display: block;
+    text-align: left;
+    width: 402px;
+    height: 120px;
     border: none;
     padding: 4px;
 }

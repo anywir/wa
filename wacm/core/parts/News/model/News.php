@@ -18,4 +18,12 @@ class News
         $news = $DBase->select("news",null,null,"date",null,$limit);
         return $news;
     }
+
+    public function update($id,$tema,$text,$autor,$date)
+    {
+        $DBase = DB::getInstance();
+        $res = $DBase->update('news',['id'=>$id],['tema'=>$tema,'text'=>$text,'id_autor'=>$autor,'date'=>$date]);
+        return ['id'=>$res?1:-1];
+    }
+
 }

@@ -20,4 +20,16 @@ namespace controller;
         {
             return "test API - OK";
         }
+
+        public function apiupdate()
+        {
+            /*POST*/
+            $id = $_POST['id'];
+            $tema = $_POST['tema'];
+            $text = $_POST['text'];
+            $date = $_POST['date'];
+            $id_autor = 1;
+            $this->model = new \model\News();
+            return $this->model->update($id,$tema,$text,$id_autor,$date);
+        }
     }

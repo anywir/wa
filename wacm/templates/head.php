@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/wir.css">
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/adopt.css">
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/modal.css">
+    <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/jquery.classyedit.css"/>
 </head>
 
 <body>

@@ -3,11 +3,11 @@
     <form id="logform" >
     <div class="form-group">
         <label for="inputLogin">Login</label>
-        <input name="login" type="text" class="form-control" id="inputLogin" placeholder="you name">
+        <input name="login" type="text" class="form-text" id="inputLogin" placeholder="you name">
     </div>
     <div class="form-group">
         <label for="inputPasswd">Password</label>
-        <input name="pass" type="password" class="form-control" id="inputPasswd" placeholder="Password">
+        <input name="pass" type="password" class="form-passwd" id="inputPasswd" placeholder="Password">
     </div>
     <p id="alert"></p>
     <button type="submit" class="ok_btn">OK</button>
