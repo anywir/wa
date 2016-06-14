@@ -63,7 +63,7 @@ $(document).ready(function() {
         var tema = $("#inputtema").val();
         var news = $("#summernote").val();
         var idnews =  $('.ok_btn').attr("id");
-        var date = $("#date").val();
+        var date = $("#datepicker").val();
         var url = PATH+"api/news/update";
 
         /* отправляем данные методом POST */
@@ -89,33 +89,45 @@ $(document).ready(function() {
 
     $('#modal_close, .overlay').click( function(){ // ловим клик по крестику или подложке
         modal_off('.modal'); //гасим модальне вікно.
+        $('.ok_btn').attr('id',''); //передаємо в ID модального вікна
     });
 
     /*викликаємо форму редагування новини*/
     $('.edit-btn').click( function(){
         var id = this.parentNode.id ;// получаем ID новини
-        var tema = $("#" + id+" h3").text(); //заголовок
-        var text = $("#" + id+" p").html(); //текст
-        var datetime = $("#" + id+" time").text(); //дата
+        var tema = $("#" + id+" #h3").text(); //заголовок
+        var text = $("#" + id+" #p").html(); //текст
+        var datetime = $("#" + id+" time").attr('datetime'); //дата
+//alert ( $('#'+id).html() );
+/*
         var date = new Date(datetime);
-
         var day = ("0" + date.getDate()).slice(-2);
         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+        var date =date.getFullYear()+"-"+(month)+"-"+ (day) ;
+*/
 
-        var date = date.getFullYear()+"-"+(month)+"-"+(day) ;
-
-        $('#date').val(date);
-        //alert(today);
+        /*передача в модальне вікно даних*/
+        $('#datepicker').val(datetime);
         $("#inputtema").val(tema);
-        //$("#date").val(date2);
-        $("#summernote").val(text);
+        //$("#summernote").val(text);
+        /*$( "#datepicker" ).datepicker({
+            setDate: datetime
+        });*/
+        $('#summernote').jqteVal(text);
         $('.ok_btn').attr('id',id); //передаємо в ID модального вікна
+
         if (id) {
             modal_on(".mod-news");
         }
     });
 
-    $('#summernote').ClassyEdit(); //редактор для повідомлень
+
+    $( "#datepicker" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+
+    $("#summernote").jqte();//завантажую редактор
+
 });
 
 modal_on(".mod-login");

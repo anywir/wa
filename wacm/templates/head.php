@@ -10,7 +10,8 @@
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/wir.css">
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/adopt.css">
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/modal.css">
-    <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/css/jquery.classyedit.css"/>
+    <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/teedit/jquery-te-1.4.0.css">
+    <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/jquery-ui-1.11.4.custom/jquery-ui.min.css">
 </head>
 
 <body>

@@ -125,7 +125,7 @@
             text-shadow: 2px 2px 3px rgba(0, 0, 11, 0.8);            
             line-height: 1.1em;
 		}
-		h3{
+		h3,#h3{
 			color: #a1d7d7;
 			text-transform:uppercase;
 			font-weight: bold;
@@ -142,7 +142,7 @@
             line-height: 1.1em;
                         
 		}
-		p{
+		p,#p{
 			color: #a1d7d7;
 			font-size: 1.666666666666667em;
 			text-align: left;
@@ -249,7 +249,7 @@
             margin: 12px 5%;
             position: relative;
         }
-        .news h3{
+        .news h3,#h3{
             font-size: 1em;
             line-height: 1.6em;
         }
@@ -262,7 +262,7 @@
             text-shadow: 0px 0px 5px rgba(35,187,8,0.7);            
             text-align: right;
         }
-        .news p{
+        .news p,#p{
             font-size: 1.25em;
             line-height: 1.4em;
             text-indent: 20px;

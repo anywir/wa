@@ -7,11 +7,11 @@
         </div>
         <div class="form-group text">
             <label for="date">Date</label>
-            <input name="date" type="date" placeholder="date" id="date">
+            <input name="date" type="text" placeholder="date" id="datepicker">
         </div>
         <div class="form-group textarea">
             <label for="summernote">news</label>
-            <textarea name="text" rows="5" class="form-textarea" id="summernote"></textarea>
+            <textarea name="text" rows="5" cols="40" class="form-textarea" id="summernote"></textarea>
         </div>
 
         <p id="alert"></p>
