@@ -65,7 +65,6 @@ $(document).ready(function() {
         var idnews =  $('.ok_btn').attr("id");
         var date = $("#datepicker").val();
         var url = PATH+"api/news/update";
-
         /* отправляем данные методом POST */
         var posting = $.post( url, { id: idnews, text: news, tema: tema, date: date } );
 
@@ -95,9 +94,24 @@ $(document).ready(function() {
     /*викликаємо форму редагування новини*/
     $('.edit-btn').click( function(){
         var id = this.parentNode.id ;// получаем ID новини
-        var tema = $("#" + id+" #h3").text(); //заголовок
-        var text = $("#" + id+" #p").html(); //текст
-        var datetime = $("#" + id+" time").attr('datetime'); //дата
+
+        if (id=='new')
+        {
+            var tema = ''; //заголовок
+            var text = ''; //текст
+            var date = new Date();
+            var day = ("0" + date.getDate()).slice(-2);
+            var month = ("0" + (date.getMonth() + 1)).slice(-2);
+            var datetime =date.getFullYear()+"-"+(month)+"-"+ (day) ;
+
+        }
+        else
+        {
+            var tema = $("#" + id + " #h3").text(); //заголовок
+            var text = $("#" + id + " #p").html(); //текст
+            var datetime = $("#" + id + " time").attr('datetime'); //дата
+
+        }
 //alert ( $('#'+id).html() );
 /*
         var date = new Date(datetime);

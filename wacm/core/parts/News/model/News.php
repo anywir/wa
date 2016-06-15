@@ -15,7 +15,7 @@ class News
     public static function get($limit)
     {
         $DBase = DB::getInstance();
-        $news = $DBase->select("news",null,null,"date",null,$limit);
+        $news = $DBase->select("news",null,null,"date","DESC",$limit);
         return $news;
     }
 
@@ -23,6 +23,13 @@ class News
     {
         $DBase = DB::getInstance();
         $res = $DBase->update('news',['id'=>$id],['tema'=>$tema,'text'=>$text,'id_autor'=>$autor,'date'=>$date]);
+        return ['id'=>$res?1:-1];
+    }
+
+    public function add($tema,$text,$autor,$date)
+    {
+        $DBase = DB::getInstance();
+        $res = $DBase->insert('news',['tema'=>$tema,'text'=>$text,'id_autor'=>$autor,'date'=>$date]);
         return ['id'=>$res?1:-1];
     }
 

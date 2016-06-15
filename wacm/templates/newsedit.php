@@ -1,5 +1,7 @@
+<div class="news" id='new'>
+    <button class="edit-btn" >new</button>
+</div>
 <?php
-
 foreach ($data['news'] as $news)
 { ?>
     <div class="news" id=<?= $news['id']?>>

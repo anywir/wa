@@ -30,6 +30,14 @@ namespace controller;
             $date = $_POST['date'];
             $id_autor = 1;
             $this->model = new \model\News();
-            return $this->model->update($id,$tema,$text,$id_autor,$date);
+            if ($id=='new')
+            {
+                return $this->model->add($tema, $text, $id_autor, $date);
+            }
+            else
+            {
+                return $this->model->update($id, $tema, $text, $id_autor, $date);
+            }
+
         }
     }

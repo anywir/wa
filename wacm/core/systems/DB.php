@@ -17,7 +17,7 @@ namespace systems {
 
         private function __construct($setDb = null)
         {
-            if (!$setDb) $setDb = "mysql:host=localhost;dbname=wacm";
+            if (!$setDb) $setDb = DBCONN;
             try {
                 $this->dBase = new PDO($setDb, "root", "");
 

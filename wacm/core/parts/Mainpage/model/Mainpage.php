@@ -15,7 +15,7 @@ class Mainpage
 {
     public function getmain()
     {
-        $news = \model\News::get([0,5]);
+        $news = \model\News::get([0,COUNTINPAGE]);
         $data['news']=$news;
         return $data;
     }

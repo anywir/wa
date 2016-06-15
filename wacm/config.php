@@ -1,16 +1,18 @@
 <?php
 
-define("DEVMODE", '1'); // 1 - на курсах 0- дома  CKeditor
-define ("COUNTINPAGE", 4);//кількість новин на сторінку
+define("DEVMODE", '0'); //   CKeditor
+define ("COUNTINPAGE", 6);//кількість новин на сторінку
 if (DEVMODE) {
     define("SITE", "http://localhost/wa/wacm/");
     define("P_METOD","4");
     define("P_CLASS","3");
+    define("DBCONN","mysql:host=localhost;dbname=wacm");
 }
 else{
     define("SITE", "http://localhost/wa/wacm/");
     define("P_METOD","4");
     define("P_CLASS","3");
+    define("DBCONN","mysql:host=localhost;dbname=wacm");
 }
 
 function __autoload($className)
