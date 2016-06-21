@@ -24,14 +24,14 @@ class Mainpage extends Controller
     {
         $this->model = new \model\Mainpage();
         $data = $this->model->getmain();
-        $edit = false; //çàõîäèìî âïåðøå ðåäàãóâàòü íåìîæíà
-        $login = true; //âèêëèêàºòüñÿ â³êíî ç ëîã³íîì
+        $edit = false; //Ð·Ð°Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð²Ð¿ÐµÑ€ÑˆÐµ Ñ€ÐµÐ´Ð°Ð³ÑƒÐ²Ð°Ñ‚ÑŒ Ð½ÐµÐ¼Ð¾Ð¶Ð½Ð°
+        $login = true; //Ð²Ð¸ÐºÐ»Ð¸ÐºÐ°Ñ”Ñ‚ÑŒÑÑ Ð²Ñ–ÐºÐ½Ð¾ Ð· Ð»Ð¾Ð³Ñ–Ð½Ð¾Ð¼
         $this->view = new \view\Mainpage();
         
-        if(\model\User::IsTrueUser()) //ÿêùî çàëîã³íèëèñü
+        if(\model\User::IsTrueUser()) //ÑÐºÑ‰Ð¾ Ð·Ð°Ð»Ð¾Ð³Ñ–Ð½Ð¸Ð»Ð¸ÑÑŒ
         {
-            $edit = true;  //ìîæíà ðåäàãóâàòü
-            $login = false;//â³êíî ëîã³íà íåäîñòóïíå
+            $edit = true;  //Ð¼Ð¾Ð¶Ð½Ð° Ñ€ÐµÐ´Ð°Ð³ÑƒÐ²Ð°Ñ‚ÑŒ
+            $login = false;//Ð²Ñ–ÐºÐ½Ð¾ Ð»Ð¾Ð³Ñ–Ð½Ð° Ð½ÐµÐ´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ðµ
         }
         $this->view->show($data,$edit,$login);
 

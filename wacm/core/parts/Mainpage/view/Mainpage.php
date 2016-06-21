@@ -25,6 +25,7 @@ class Mainpage
         else
         {
             include_once "templates/news.php";
+            include_once "templates/review.php";
             include_once "templates/article.php";
         }
         if ($login)
