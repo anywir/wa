@@ -449,7 +449,7 @@
         /*класи для ВВВ-МАХ-----------------------------------------------*/
 
         .bbb_maxi{ /*бек для ВВВ*/
-            background-image:url(../images/row2_bck.png);
+            /*background-image:url(../images/row2_bck.png);*/
         }
         
         .bbb_maxi .top_no_mov  p{
@@ -486,7 +486,7 @@
 
         /*класи для bbb_lite-----------------------------------------------*/
         .bbb_lite{
-            background-image:url(../images/row4_bck.png); 
+            /*background-image:url(../images/row4_bck.png);*/
 
         }
         .slide_img{ /*тут картинки трохи ширші*/
@@ -567,7 +567,7 @@
         /*Класси для раптора----------------------------------------------*/
                 
         .raptor{ /*бек для раптора*/
-            background-image:url(../images/row1_bck.png);
+            /*background-image:url(../images/row1_bck.png); стиль виніс в ХТМЛ*/
         }
 
         .raptor .top_no_mov h2{ /*заголовок раптора*/
@@ -613,7 +613,7 @@
         
         /*класи для picodac-----------------------------------------------*/
         .picodac{
-            background-image:url(../images/row3_bck.png); 
+            /*background-image:url(../images/row3_bck.png);*/
 
         }
 

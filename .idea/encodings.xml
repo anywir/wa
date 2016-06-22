@@ -10,7 +10,10 @@
     <file url="file://$PROJECT_DIR$/wacm/lib/css/modal.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wacm/lib/js/wacm.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wacm/templates/head.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wacm/templates/modblock.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wacm/templates/modlogin.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wacm/templates/modnews.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wacm/templates/modreview.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wacm/templates/section.php" charset="UTF-8" />
   </component>
 </project>

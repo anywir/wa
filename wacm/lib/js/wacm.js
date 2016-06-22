@@ -60,13 +60,18 @@ $(document).ready(function() {
     $("#newsform").submit(function(event)
     {
         event.preventDefault();
+
         var tema = $("#inputtema").val();
-        var news = $("#summernote").val();
-        var idnews =  $('.ok_btn').attr("id");
+        var text = $("#summernote").val();
+        var id =  $('.ok_btn').attr("id");
         var date = $("#datepicker").val();
-        var url = PATH+"api/news/update";
+
+        idblock=id.replace(/[^\d;]/g, '');
+        idtype=id.replace(/[^\D;]/g, '');
+
+        var url = PATH+"api/"+idtype+"/update";
         /* отправляем данные методом POST */
-        var posting = $.post( url, { id: idnews, text: news, tema: tema, date: date } );
+        var posting = $.post( url, { id: idblock, text: text, tema: tema, date: date } );
 
         /* результат */
         posting.done(function( data )
@@ -91,10 +96,11 @@ $(document).ready(function() {
         $('.ok_btn').attr('id',''); //передаємо в ID модального вікна
     });
 
-    /*викликаємо форму редагування новини*/
+    /*викликаємо форму редагування блоку*/
     $('.edit-btn').click( function(){
-        var id = this.parentNode.id ;// получаем ID новини
 
+        var id = this.parentNode.id ;// получаем ID блоку
+        var classes = this.parentNode.classList; //класс блоку
         if (id=='new')
         {
             var tema = ''; //заголовок
@@ -107,10 +113,26 @@ $(document).ready(function() {
         }
         else
         {
-            var tema = $("#" + id + " #h3").text(); //заголовок
-            var text = $("#" + id + " #p").html(); //текст
-            var datetime = $("#" + id + " time").attr('datetime'); //дата
-
+            if (classes.contains('about'))
+            {
+                var tema = $("#" + id + " h2").text(); //заголовок
+                var text = $("#" + id + " aside p").html(); //текст
+                //var datetime = $("#" + id + " time").attr('datetime'); //дата
+                var modal = '.mod-block';
+            }
+            else if (classes.contains('news'))
+            {
+                var tema = $("#" + id + " #h3").text(); //заголовок
+                var text = $("#" + id + " #p").html(); //текст
+                var datetime = $("#" + id + " time").attr('datetime'); //дата
+                var modal = '.mod-block';
+            }
+            else if (classes.contains('slide_info'))
+            {
+                var tema = $("#" + id + " span").text(); //заголовок
+                var text = $("#" + id + " p").html(); //текст
+                var modal = '.mod-block';
+            }
         }
 //alert ( $('#'+id).html() );
 /*
@@ -128,10 +150,11 @@ $(document).ready(function() {
             setDate: datetime
         });*/
         $('#summernote').jqteVal(text);
+        $('#classes').text(classes);
         $('.ok_btn').attr('id',id); //передаємо в ID модального вікна
 
         if (id) {
-            modal_on(".mod-news");
+            modal_on(modal);
         }
     });
 

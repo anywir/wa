@@ -20,9 +20,9 @@ class Mainpage
         $sections = \model\Section::get(1);
         $data['news']=$news;
         $data['review']=$review;
-        $data['secctions']=$sections;
-        echo "<pre>";
-        print_r($data);
+        $data['sections']=$sections;
+/*        echo "<pre>";
+        print_r($data);*/
         return $data;
     }
 

@@ -4,7 +4,7 @@
 <?php
 foreach ($data['news'] as $news)
 { ?>
-    <div class="news" id=<?= $news['id']?>>
+    <div class="news" id="news<?= $news['id']?>">
         <div class="neon_light"></div>
         <?php
         $date = date_create($news['date']);

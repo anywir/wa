@@ -24,4 +24,18 @@ class Review
         $review['sticker']=$DBase->sendQuery($sql);
         return $review;
     }
+
+    public function update($id,$tema,$text,$autor,$date)
+    {
+        $DBase = DB::getInstance();
+        $res = $DBase->update('review',['id'=>$id],['title'=>$tema,'text'=>$text,'date'=>$date]);
+        return ['id'=>$res?1:-1];
+    }
+
+    public function add($tema,$text,$autor,$date)
+    {
+        $DBase = DB::getInstance();
+        $res = $DBase->insert('review',['title'=>$tema,'text'=>$text,'id_style'=>6,'date'=>$date]);
+        return ['id'=>$res?1:-1];
+    }
 }

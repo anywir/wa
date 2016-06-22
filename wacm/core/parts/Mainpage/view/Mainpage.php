@@ -18,15 +18,16 @@ class Mainpage
         if ($edit)
         {
             include_once "templates/logout.php";
-            include_once "templates/modnews.php";
+            include_once "templates/modblock.php";
             include_once "templates/newsedit.php";
-            include_once "templates/artedit.php";
+            include_once "templates/reviewedit.php";
         }
         else
         {
             include_once "templates/news.php";
             include_once "templates/review.php";
-            include_once "templates/article.php";
+            include_once "templates/section.php";
+
         }
         if ($login)
         {
