@@ -10,6 +10,24 @@ function modal_on(id)
                     .animate({opacity: 1, top: '30%'}, 200); // плавно прибавляем прозрачность одновременно со съезжанием вниз
             });
     }
+    else //новий блок
+    {
+        //загрузка аякс з бд доступні типи блоків
+        if (id!=".mod-login")
+        {
+            alert(id);
+            var url = PATH + "api/style/getblocks";
+            $.get(url, function (data) {
+                var arr = JSON.parse(data);
+                for (var i=0; i<arr.length; i++)
+                {
+                    var blck = arr[i];
+                    $("#listtype").append("<li class='blckName' id="+blck.id+">"+blck.name+"</li>");
+                }
+            });
+            modal_on(".mod-block");
+        }
+    }
 }
 
 
@@ -21,6 +39,7 @@ function modal_off(id)     /* Закрытие модального окна, т
         { // после анимации
             $(this).css('display', 'none'); // делаем ему display: none;
             $('.overlay').fadeOut(400); // скрываем подложку
+            $("#listtype").empty(); //очистим список
         }
     );
 }
@@ -101,6 +120,7 @@ $(document).ready(function() {
 
         var id = this.parentNode.id ;// получаем ID блоку
         var classes = this.parentNode.classList; //класс блоку
+
         if (id=='new')
         {
             var tema = ''; //заголовок

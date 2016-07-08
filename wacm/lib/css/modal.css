@@ -86,14 +86,17 @@
     padding: 4px;
 }
 
-.form-group .text
+.text
 {
     height: 35px;
+    width: 500px;
+    float: left;
 }
 
-.form-group .textarea
+.textarea
 {
     height: 128px;
+    float: left;
 }
 
 .form-group label
@@ -154,4 +157,16 @@
     height: 15px;
     width: 40px;
     padding: 10px;
+}
+
+.type-blck
+{
+    display: block;
+    float: right;
+    margin: 2px;
+    padding: 4px;
+}
+#listtype li:hover
+{
+    color: white;
 }
