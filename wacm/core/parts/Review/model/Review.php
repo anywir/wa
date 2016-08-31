@@ -18,10 +18,7 @@ class Review
         $sql = "SELECT r.*, s.style FROM `review` AS r
         LEFT JOIN `styles` AS s ON s.id = r.id_style WHERE r.id=".$id;
         $review = $DBase->sendQuery($sql)[0];
-        $sql = "SELECT st.*, s.style FROM `sticker` AS st
-        LEFT JOIN `styles` AS s ON s.id = st.id_style WHERE st.id_review=".$id;
-
-        $review['sticker']=$DBase->sendQuery($sql);
+        $review['sticker']= \model\Sticker::get($id); //отримуємо стікери
         return $review;
     }
 

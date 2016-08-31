@@ -10,12 +10,12 @@ function modal_on(id)
                     .animate({opacity: 1, top: '30%'}, 200); // плавно прибавляем прозрачность одновременно со съезжанием вниз
             });
     }
-    else //новий блок
+    else //для нового блоку modal_on не передаємо аргумент і загружаємо доступні варіанти
     {
         //загрузка аякс з бд доступні типи блоків
         if (id!=".mod-login")
         {
-            alert(id);
+            //alert(id);
             var url = PATH + "api/style/getblocks";
             $.get(url, function (data) {
                 var arr = JSON.parse(data);
@@ -25,7 +25,7 @@ function modal_on(id)
                     $("#listtype").append("<li class='blckName' id="+blck.id+">"+blck.name+"</li>");
                 }
             });
-            modal_on(".mod-block");
+            modal_on(".mod-block"); //заново запускаємо, але вже з аргументом для викреслювання вікна
         }
     }
 }
@@ -87,16 +87,27 @@ $(document).ready(function() {
 
         idblock=id.replace(/[^\d;]/g, '');
         idtype=id.replace(/[^\D;]/g, '');
+        idtype=idtype=="new"?"news":idtype;
+        idblock=idblock==""?"new":idblock; //замовчування
+
+        //alert(idtype+"  "+idblock);
 
         var url = PATH+"api/"+idtype+"/update";
         /* отправляем данные методом POST */
-        var posting = $.post( url, { id: idblock, text: text, tema: tema, date: date } );
+        if (idtype == "sticker")
+        {
+            var posting = $.post( url, { id: idblock, text: text, sign: tema, style: null, id_review: null } );
+        }
+        else
+        {
+            var posting = $.post( url, { id: idblock, text: text, tema: tema, date: date } );
+        }
+
 
         /* результат */
         posting.done(function( data )
         {
             var id = JSON.parse(data).id;
-            //alert("TYPE - "+id);
             if (id>0)
             {
                 location.reload(true) //якщо увійшли, заново завантажуємо сторінку
@@ -129,7 +140,8 @@ $(document).ready(function() {
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
             var datetime =date.getFullYear()+"-"+(month)+"-"+ (day) ;
-
+            // var modal = '.mod-block'; не присваюємо, щоб загрузити варіанти блоків modal_on перший раз
+            // прокручується вхолосту не викреслюючи модальне вікно.
         }
         else
         {
