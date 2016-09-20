@@ -25,8 +25,11 @@ class Mainpage
         else
         {
             include_once "templates/news.php";
-            include_once "templates/review.php";
-            include_once "templates/section.php";
+            foreach ($data['review'] as $eachrev) 
+            {
+                include_once "templates/review.php";
+                include_once "templates/section.php";
+            }
 
         }
         if ($login)

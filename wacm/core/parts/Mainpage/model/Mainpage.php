@@ -16,8 +16,8 @@ class Mainpage
     public function getmain()
     {
         $news = \model\News::get([0,COUNTINPAGE]);
-        $review = \model\Review::get('1');
-        $sections = \model\Section::get(1);
+        $review = \model\Review::get();
+        $sections = \model\Section::get();
         $data['news']=$news;
         $data['review']=$review;
         $data['sections']=$sections;

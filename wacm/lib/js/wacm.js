@@ -24,10 +24,18 @@ function modal_on(id)
                     var blck = arr[i];
                     $("#listtype").append("<li class='blckName' id="+blck.id+">"+blck.name+"</li>");
                 }
+                // обробка списку блоків--------------
+                document.querySelector('#listtype').addEventListener('click', function(e){ // Вешаем обработчик клика на список блоків
+                    var id = e.target.innerHTML; // отримали блок
+                    document.querySelector('#classes').innerHTML = id; // перейменували
+                    $('.ok_btn').attr('id',id); //передаємо в ID модального вікна
+
+                });
             });
             modal_on(".mod-block"); //заново запускаємо, але вже з аргументом для викреслювання вікна
         }
     }
+
 }
 
 
@@ -43,6 +51,7 @@ function modal_off(id)     /* Закрытие модального окна, т
         }
     );
 }
+
 
 
 
@@ -119,7 +128,6 @@ $(document).ready(function() {
         });
 
     });
-
 
     $('#modal_close, .overlay').click( function(){ // ловим клик по крестику или подложке
         modal_off('.modal'); //гасим модальне вікно.
@@ -200,6 +208,8 @@ $(document).ready(function() {
 });
 
 modal_on(".mod-login");
+
+
 
 
 

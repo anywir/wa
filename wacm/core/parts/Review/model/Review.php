@@ -12,14 +12,19 @@ use systems\DB;
 
 class Review
 {
-    public static function get($id)
+    public static function get($id = null)
     {
+        $where = ($id==null)?"":" WHERE r.id=".$id;
         $DBase = DB::getInstance();
         $sql = "SELECT r.*, s.style FROM `review` AS r
-        LEFT JOIN `styles` AS s ON s.id = r.id_style WHERE r.id=".$id;
-        $review = $DBase->sendQuery($sql)[0];
-        $review['sticker']= \model\Sticker::get($id); //ÓÚËÏÛ∫ÏÓ ÒÚ≥ÍÂË
-        return $review;
+        LEFT JOIN `styles` AS s ON s.id = r.id_style".$where;
+        $reviews = $DBase->sendQuery($sql);
+        foreach($reviews as $review)
+        {
+            $review['sticker'] = \model\Sticker::get($review['id']); //–æ—Ç—Ä–∏–º—É—î–º–æ —Å—Ç—ñ–∫–µ—Ä–∏
+            $res[]=$review;
+        }
+        return $res;
     }
 
     public function update($id,$tema,$text,$autor,$date)
