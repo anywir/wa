@@ -1,5 +1,4 @@
 <?php
-
 foreach ($data['news'] as $news)
 { ?>
     <div class="news">

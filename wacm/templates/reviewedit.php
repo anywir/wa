@@ -1,10 +1,10 @@
-<div class="about <?=$data['review']['style']?>" id="review<?=$data['review']['id']?>">
-    <h2><?=$data['review']['title']?></h2>
+<div class="about <?=$eachrev['style']?>" id="review<?=$eachrev['id']?>">
+    <h2><?=$eachrev['title']?></h2>
     <aside>
-        <p><?=$data['review']['text']?></p>
+        <p><?=$eachrev['text']?></p>
     </aside>
     <?php
-        foreach($data['review']['sticker'] as $sticker)
+        foreach($eachrev['sticker'] as $sticker)
         {
             ?>
             <div class="slide_info <?= $sticker['style'] ?>" id = "sticker<?=$sticker['id']?>">

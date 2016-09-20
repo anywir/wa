@@ -14,21 +14,25 @@ class Mainpage
     public function show($data,$edit,$login)
     {
         include_once "templates/head.php";
-
+        //include_once "templates/dump.php"; //дамп дати
         if ($edit)
         {
             include_once "templates/logout.php";
             include_once "templates/modblock.php";
             include_once "templates/newsedit.php";
-            include_once "templates/reviewedit.php";
+            foreach ($data['review'] as $eachrev)
+            {
+
+                include "templates/reviewedit.php";
+            }
         }
         else
         {
             include_once "templates/news.php";
             foreach ($data['review'] as $eachrev) 
             {
-                include_once "templates/review.php";
-                include_once "templates/section.php";
+                include "templates/review.php";
+                include "templates/section.php";
             }
 
         }
