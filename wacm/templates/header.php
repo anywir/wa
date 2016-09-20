@@ -5,7 +5,7 @@
             <li><a href="http://blog.wired.audio">Блог</a></li>
             <li><a href="#news">Новости</a></li>
 <?php
-
+// заповнюємо меню з списку секцій
 foreach ($data['sections'] as $section) {
     ?>
             <li><a href=#<?=$section["style"]?>><?=$section["menu"]?></a></li>
