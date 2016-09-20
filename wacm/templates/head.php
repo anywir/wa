@@ -14,5 +14,4 @@
     <link rel="stylesheet" type="text/css" href="<?=SITE?>lib/jquery-ui-1.11.4.custom/jquery-ui.min.css">
 </head>
 
-<body>
-<div id="wrap">
+

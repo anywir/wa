@@ -14,6 +14,7 @@ class Mainpage
     public function show($data,$edit,$login)
     {
         include_once "templates/head.php";
+        include_once "templates/header.php";        
         //include_once "templates/dump.php"; //дамп дати
         if ($edit)
         {
@@ -28,6 +29,7 @@ class Mainpage
         }
         else
         {
+
             include_once "templates/news.php";
             foreach ($data['review'] as $eachrev) 
             {

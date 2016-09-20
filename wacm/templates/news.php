@@ -1,6 +1,12 @@
 <?php
+?>
+<div class="news_block" id="news">
+    <h2>новости</h2>
+    <?php
+
 foreach ($data['news'] as $news)
 { ?>
+
     <div class="news">
         <div class="neon_light"></div>
         <?php
@@ -16,3 +22,4 @@ foreach ($data['news'] as $news)
 }
 
 ?>
+</div>
